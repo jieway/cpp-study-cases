@@ -1,3 +1,0 @@
-F:/Data-Structure/1. Address Book MS/cmake-build-debug/CMakeFiles/1__Address_Book_MS.dir
-F:/Data-Structure/1. Address Book MS/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Data-Structure/1. Address Book MS/cmake-build-debug/CMakeFiles/rebuild_cache.dir

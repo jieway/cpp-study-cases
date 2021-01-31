@@ -1,3 +1,0 @@
-"D:\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\1__Address_Book_MS.dir/objects.a
-D:\Dev-Cpp\MinGW64\bin\ar.exe cr CMakeFiles\1__Address_Book_MS.dir/objects.a @CMakeFiles\1__Address_Book_MS.dir\objects1.rsp
-D:\Dev-Cpp\MinGW64\bin\g++.exe  -Wall -fexec-charset=GBK -g   -Wl,--whole-archive CMakeFiles\1__Address_Book_MS.dir/objects.a -Wl,--no-whole-archive  -o 1__Address_Book_MS.exe -Wl,--out-implib,lib1__Address_Book_MS.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\1__Address_Book_MS.dir\linklibs.rsp
