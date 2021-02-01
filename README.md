@@ -10,28 +10,34 @@
 
 简介：用到知识点有数组，循环，分支结构，结构体，全是基础知识并且没有用到类与对象。
 
-地址：https://www.bilibili.com/video/BV1et411b73Z?p=72
+[Bibili p72](https://www.bilibili.com/video/BV1et411b73Z?p=72)
 
 * 🧿 计算器（68 行）
 
 简介：多态的使用。
 
-地址：https://www.bilibili.com/video/BV1et411b73Z?p=137
+[Bibili p137](https://www.bilibili.com/video/BV1et411b73Z?p=137)
 
 * 🧿 泡饮品（85 行）
 
 简介：依旧是多态。，多态练习。
 
-地址：https://www.bilibili.com/video/BV1et411b73Z?p=139
+[Bibili p139](https://www.bilibili.com/video/BV1et411b73Z?p=139)
 
 * 🧿 职工管理系统（710 行）
 
 简介：在前面的基础上加上了面向对象。略微复杂，共  代码。
 
-地址：https://www.bilibili.com/video/BV1et411b73Z?p=147
+[Bibili p147](https://www.bilibili.com/video/BV1et411b73Z?p=147)
+
+* 🧿 实现一个通用数组 
+
+简介：模板的实践。
+
+[Bibili p182](https://www.bilibili.com/video/BV1et411b73Z?p=182)
 
 * 🧿 演讲比赛流程管理系统
 
 简介：加上了 STL ！
 
-地址：https://www.bilibili.com/video/BV1et411b73Z?p=264
+[Bibili p264](https://www.bilibili.com/video/BV1et411b73Z?p=264)
