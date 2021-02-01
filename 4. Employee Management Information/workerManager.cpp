@@ -358,6 +358,14 @@ void WorkerManager::Find_Emp(){
     }
 }
 
+void WorkerManager::Sort_Emp(){
+    if(this->m_FileIsEmpty) {
+        cout << "文件不存在或记录为空！" << endl;
+    }else {
+        
+    }
+}
+
 WorkerManager::~WorkerManager(){
 
     if (this->m_EmpArray != NULL) {

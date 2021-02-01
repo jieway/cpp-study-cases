@@ -49,6 +49,10 @@ public:
 
     // 查找职工
     void Find_Emp();
-    
+
+    // 排序
+    void Sort_Emp();
+
+    // 析构扫尾
     ~WorkerManager();
 };
