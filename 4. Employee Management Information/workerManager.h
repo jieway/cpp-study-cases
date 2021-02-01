@@ -35,8 +35,20 @@ public:
     // 将文件的内容从文本读取到内存中
     void init_Emp();
 
-    // 查看
+    // 查看职工信息
     void Show_Emp();
+
+    // 判断职工是否存在
+    int IsExist(int id);
+
+    // 删除离职职工
+    void Del_Emp();
+
+    // 修改职工信息
+    void Mod_Emp();
+
+    // 查找职工
+    void Find_Emp();
     
     ~WorkerManager();
 };
