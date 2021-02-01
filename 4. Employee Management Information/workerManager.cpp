@@ -306,6 +306,9 @@ void WorkerManager::Find_Emp(){
 
     if(this->m_FileIsEmpty){
         cout << "文件不存在或记录为空！" << endl;
+        system("pause");
+        system("cls");
+
     }else{
         cout << "请输入查找的方式：" << endl;
         cout << "1. 按职工编号查找" << endl;
@@ -361,8 +364,43 @@ void WorkerManager::Find_Emp(){
 void WorkerManager::Sort_Emp(){
     if(this->m_FileIsEmpty) {
         cout << "文件不存在或记录为空！" << endl;
+        system("pause");
+        system("cls");
+
     }else {
-        
+        cout << "请选择排序方式（1/2）：" << endl;
+        cout << "1. 按照职工号进行升序" << endl;
+        cout << "2. 按照职工号进行降序" << endl;
+
+        int select = 0;
+        cin >> select;
+
+        // 选择排序
+        for (int i = 0; i < m_EmpNum; i++){
+            
+            int minOrMax = i;
+            for (int j = i + 1; j < m_EmpNum; j++){
+                if(select == 1){
+                    if(this->m_EmpArray[minOrMax]->m_Id > this->m_EmpArray[j]->m_Id){
+                        minOrMax = j;
+                    }
+                }else {
+                    if(this->m_EmpArray[minOrMax]->m_Id < this->m_EmpArray[j]->m_Id){
+                        minOrMax = j;
+                    }
+                }
+            }
+
+            if(i != minOrMax){
+                Worker *t = this->m_EmpArray[i];
+                this->m_EmpArray[i] = this->m_EmpArray[minOrMax];
+                this->m_EmpArray[minOrMax] = t;
+            }
+        }
+
+        cout << "排序成功，排序后结果为：" << endl;
+        this->save();
+        this->Show_Emp();
     }
 }
 
