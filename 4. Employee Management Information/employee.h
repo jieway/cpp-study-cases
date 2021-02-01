@@ -4,7 +4,7 @@ using namespace std;
 #include "worker.h"
 
 
-// å‘˜å·¥ç±»
+// Ô±¹¤Àà
 class Employee:public Worker {
 public:
     Employee(int id, string name, int dId);

@@ -15,18 +15,23 @@
 
 using namespace std;
 
-int main() {
+void TestM() {
 
+    // 员工类，经理类和老板类测试。
     Worker *w = new Employee(1, "张三", 1);
     w->showInfo();
 
-    Worker *m = new Manager(1, "张三", 1);
+    Worker *m = new Manager(1, "张三", 2);
     m->showInfo();
 
-    Worker *b = new Boss(1, "张三", 1);
+    Worker *b = new Boss(1, "张三", 3);
     b->showInfo();
- 
-    return 0;
+}
+
+int main() {
+
+    // TestM();
+    // return 0;
 
     WorkerManager wm;
 
@@ -37,10 +42,10 @@ int main() {
         cin >> choice;
         switch(choice) {
             case 0: // 0. 退出系统
-                ExitSystem();
+                wm.ExitSystem();
                 break;
             case 1: // 1. 增加职工信息
-                
+                wm.Add_Emp();
                 break;
             case 2: // 2. 显示职工信息
                 break;
