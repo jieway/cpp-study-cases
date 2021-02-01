@@ -3,14 +3,46 @@
 #include "employee.h"
 #include "manager.h"
 #include "boss.h"
-
+#include <fstream>
 
 WorkerManager::WorkerManager() {
 
-    // 初始化属性
-    this->m_EmpNum = 0;
+    ifstream ifs;
+    ifs.open(FILENAME, ios::in);    // 读文件
 
-    this->m_EmpArray = NULL;
+    if(!ifs.is_open()) {
+        cout << "文件不存在！" << endl;
+        this->m_EmpNum = 0;
+        this->m_EmpArray = NULL;
+        this->m_FileIsEmpty = true;
+        ifs.close();
+        return;
+
+    }
+
+    char ch;
+    ifs >> ch;
+    if(ifs.eof()) {
+        cout << "文件为空！" << endl;
+        this->m_EmpNum = 0;
+        this->m_EmpArray = NULL;
+        this->m_FileIsEmpty = true;
+        ifs.close();
+        return;
+    }
+
+    int num = this->get_EmpNum();
+    cout << "职工人数为：" << num << endl;
+    this->m_EmpNum = num;
+    
+    this->m_EmpArray = new Worker *[this->m_EmpNum];
+    init_Emp();
+
+    // for (int i = 0; i < this->m_EmpNum; i++){
+    //     cout << "职工号：" << this->m_EmpArray[i]->m_Id
+    //             << "职工姓名：" << this->m_EmpArray[i]->m_Name
+    //             << "部门编号：" << this->m_EmpArray[i]->m_DeptId << endl; 
+    // }
 
 }
 
@@ -95,13 +127,94 @@ void WorkerManager::Add_Emp(){
         delete[] this->m_EmpArray;
         this->m_EmpArray = newSpace;
         this->m_EmpNum = newSize;
+        this->m_FileIsEmpty = false;
 
         cout << "成功添加" << addNum << "名新职工。" << endl; 
+
+        this->save();
+
     }else {
-        cout << "输入有误，请重新输入！" << endl;
+        cout << "输入有误！" << endl;
+    }
+
+    system("pause");
+    system("cls");
+}
+
+void WorkerManager::Show_Emp(){
+    
+    if(this->m_FileIsEmpty){
+        cout << "文件不存在或记录为空！" << endl;
+    }else {
+        for (int i = 0; i < this->m_EmpNum; i++){
+            this->m_EmpArray[i]->showInfo();
+        }
+    }
+
+    system("pause");
+    system("cls");
+}
+
+void WorkerManager::save(){
+
+    ofstream ofs;
+    ofs.open(FILENAME, ios::out);
+
+    for (int i = 0; i < this->m_EmpNum; i++){
+        ofs << this->m_EmpArray[i]->m_Id << " "
+            << this->m_EmpArray[i]->m_Name << " "
+            << this->m_EmpArray[i]->m_DeptId << endl;
+    }
+
+    ofs.close();
+}
+
+int WorkerManager::get_EmpNum(){
+    ifstream ifs;
+    ifs.open(FILENAME,ios::in);
+
+    int id;
+    string name;
+    int dId;
+
+    int num = 0;
+
+    while(ifs >> id && ifs >> name && ifs >> dId){
+        num++;
+    }
+
+    ifs.close();
+
+    return num;
+}
+
+void WorkerManager::init_Emp(){
+    ifstream ifs;
+    ifs.open(FILENAME, ios::in);
+
+    int id;
+    string name;
+    int dId;
+
+    int index = 0;
+    while(ifs >> id && ifs >> name && ifs >> dId) {
+        Worker *worker = NULL;
+        if (dId == 1){
+            worker = new Employee(id,name,dId);
+        }else if (dId == 2){
+            worker = new Manager(id,name,dId);
+        }else if (dId == 3){
+            worker = new Boss(id,name,dId);
+        }
+        this->m_EmpArray[index++] = worker;
     }
 }
 
 WorkerManager::~WorkerManager(){
+
+    if (this->m_EmpArray != NULL) {
+        delete[] this->m_EmpArray;
+        this->m_EmpArray = NULL;
+    }
 
 }

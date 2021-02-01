@@ -48,6 +48,7 @@ int main() {
                 wm.Add_Emp();
                 break;
             case 2: // 2. 显示职工信息
+                wm.Show_Emp();
                 break;
             case 3: // 3. 删除励志职工
                 break;
