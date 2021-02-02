@@ -36,6 +36,12 @@
 
 [Bibili p182](https://www.bilibili.com/video/BV1et411b73Z?p=182)
 
+* 🧿 评委打分
+
+简介：STL 练习！
+
+[Bibili p210](https://www.bilibili.com/video/BV1et411b73Z?p=210)
+
 * 🧿 演讲比赛流程管理系统
 
 简介：加上了 STL ！
